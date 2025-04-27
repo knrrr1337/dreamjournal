@@ -1,0 +1,45 @@
+.container {
+    padding: 10px;
+    border: 2px solid rgb(49, 44, 85);
+    border-bottom: 0px;
+    min-width: 250px;
+}
+
+.bruh {
+    display: flex;
+    cursor: pointer;
+}
+
+.pfprow {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hererakk {
+    background-color: rgba(0,0,0, 0.5);
+    border-radius: 50%;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.hererakcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gyalazdmeg {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 7.5px;
+}
+
+.timejoined {
+    font-size:10px;
+    color: rgb(148, 148, 148);
+}

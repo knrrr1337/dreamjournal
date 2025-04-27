@@ -1,0 +1,72 @@
+.loginPage {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(15, 8, 44);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginCard {
+    width: 300px;
+    height: 400px;
+    background-color: rgb(46, 39, 76);
+    border-radius: 10px;
+    padding: 25px;
+    border: 2px solid rgb(27, 23, 56)
+}
+
+h1 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.textfields {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 20px;
+}
+
+.textfield {
+    width: 100%;
+}
+
+.checkbox {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+span {
+    color: white;
+}
+
+.login {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textfield * {
+    color: white;
+}
+
+
+.login p {
+    margin: 10px 0px 0px 0px;
+    color: white;
+    cursor: pointer;
+}
+
+.loginButton {
+    width: min-content;
+}
+
+
+
+
+

@@ -1,0 +1,35 @@
+.comment {
+    border: 2px solid rgb(49, 44, 85);
+    border-bottom:0px;
+    padding: 10px;
+    
+}
+
+
+
+.pfprow {
+    display: flex;
+    
+}
+
+.hehe {
+    margin-left: 7.5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hehe span {
+    margin: 0px;
+}
+
+.timeposted {
+    font-size:10px;
+    color: rgb(148, 148, 148);
+}
+
+.content {
+    margin-top: 5px;
+    margin-left: 47.5px;
+
+}

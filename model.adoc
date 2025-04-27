@@ -1,0 +1,350 @@
+= Dream Journal - Functional Model
+
+== Collaborating Members:
+Bige Rajmund & Molnár Zsombor
+
+== Description
+
+Logged-in users can maintain a dream journal. They can record, view, modify, and delete dreams, as well as interact with other users' dreams in the "For You" tab.
+
+== Use Cases
+
+=== Brief Description of Use Cases
+
+==== Listing Dreams
+[cols="1h,3"]
+|===
+| Identifier
+| UC_D_List
+
+| Triggering Event
+| The user wants to view their dreams or the community news feed.
+
+| Users
+| General user
+
+| Primary Flow
+|
+
+The user clicks on the "For You/Following" or "My Notes" menu.
+
+The system displays the user's list of dreams or the community news feed if selected.
+
+Exceptions and Alternatives
+
+| Post-condition
+| The list of dreams is displayed.
+
+| Result
+| The user can browse their dreams or feed posts.
+
+| Use Case Realization
+| Technical model
+
+|===
+
+==== Adding a New Dream
+[cols="1h,3"]
+|===
+| Identifier
+| UC_D_Create
+
+| Triggering Event
+| The user wants to add a new dream to their journal.
+
+| Users
+| General user
+
+| Primary Flow
+|
+
+The user fills out the "New Dream" form (e.g., title, date, description, tags).
+
+The system verifies the validity of the data.
+
+The user selects whether the dream should be added to their personal journal, followers' feed, or a public feed.
+
+The dream is saved in the journal.
+
+| Exceptions and Alternatives
+| (E.2. The form is incomplete or contains invalid data.)
+
+| Post-condition
+| The new dream is added to the journal.
+
+(E.2. The system displays an error message and does not save the data.)
+
+| Result
+| The new dream is accessible in the user's journal.
+
+| Use Case Realization
+| Technical model
+
+|===
+
+==== Viewing a Dream
+[cols="1h,3"]
+|===
+| Identifier
+| UC_D_Read
+
+| Triggering Event
+| The user wants to view a specific dream in detail.
+
+| Users
+| General user
+
+| Primary Flow
+|
+
+The user selects a dream from the list.
+
+The system loads and displays the dream’s details (e.g., date, description, tags, comments, interactions).
+
+Exceptions and Alternatives
+
+| Post-condition
+| The dream details are displayed to the user.
+
+| Result
+| The user can explore the selected dream in detail.
+
+| Use Case Realization
+| Technical model
+
+|===
+
+==== Editing a Dream
+[cols="1h,3"]
+|===
+| Identifier
+| UC_D_Update
+
+| Triggering Event
+| The user wants to modify an existing dream.
+
+| Users
+| General user
+
+| Primary Flow
+|
+
+The user clicks the edit button on the desired dream entry.
+
+The necessary modifications are made.
+
+The system saves the changes.
+
+| Exceptions and Alternatives
+| (E.3. Invalid data is entered.)
+
+| Post-condition
+| The dream data is updated in the system.
+
+(E.3. The system displays an error message and does not save the changes.)
+
+| Result
+| The user sees the updated version of the dream.
+
+| Use Case Realization
+| Technical model
+
+|===
+
+==== Deleting a Dream
+[cols="1h,3"]
+|===
+| Identifier
+| UC_D_Delete
+
+| Triggering Event
+| The user wants to delete a dream from the journal.
+
+| Users
+| General user
+
+| Primary Flow
+|
+
+The user clicks the delete button on the desired dream entry.
+
+The system asks for confirmation (e.g., "Are you sure you want to delete?").
+
+The system executes the deletion.
+
+Exceptions and Alternatives
+
+| Post-condition
+| The dream is deleted from the system.
+
+| Result
+| The deleted dream no longer appears in the journal.
+
+| Use Case Realization
+| Technical model
+
+|===
+
+== Permissions
+
+[cols="1,1,1"]
+|===
+| Use Case | Permission | Roles
+
+| Listing Dreams
+| DREAM_LIST
+| General user, Administrator
+
+| Adding a New Dream
+| DREAM_CREATE
+| General user, Administrator
+
+| Viewing a Dream
+| DREAM_READ
+| General user, Administrator
+
+| Editing a Dream
+| DREAM_UPDATE
+| General user, Administrator
+
+| Deleting a Dream
+| DREAM_DELETE
+| General user, Administrator
+
+|===
+
+== User Interface Design
+
+=== Dream Listing Interface
+
+==== Layout
+
+==== Fields on the Interface
+
+[cols="1,1,1,1,1"]
+|===
+| Name | Type | Required? | Editable? | Display
+
+| Dream Type Filter
+| Dropdown list
+| No
+| Yes
+| Filter window
+
+| Date Filter
+| Date field
+| No
+| Yes
+| Filter window
+
+| Dream Title
+| Label
+| No
+| No
+| Among list items
+
+|===
+
+==== Available Actions on the Interface
+
+[cols="1,1,1"]
+|===
+| Event | Description | Permission
+
+| Selecting a Dream
+| The user navigates to detailed dream view.
+| DREAM_READ
+
+| Adding a New Dream
+| Clicking the "New Dream" button opens the form.
+| DREAM_CREATE
+
+|===
+
+=== New Dream Entry Interface
+
+==== Layout
+
+==== Fields on the Interface
+
+[cols="1,1,1,1,1"]
+|===
+| Name | Type | Required? | Editable? | Validation
+
+| Dream Title
+| Text input field
+| Yes
+| Yes
+| At least 5 characters
+
+| Dream Date
+| Date field
+| Yes
+| Yes
+| Cannot be a future date
+
+| Description
+| Text field
+| Yes
+| Yes
+| At least 20 characters
+
+| Tags
+| Tag selector field
+| No
+| Yes
+| Maximum 5 tags
+
+|===
+
+==== Available Actions on the Interface
+
+[cols="1,1,1"]
+|===
+| Event | Description | Permission
+
+| Save
+| Executes "New Dream Entry" if the form is correctly filled.
+| DREAM_CREATE
+
+|===
+
+=== Dream Viewing Interface
+
+==== Layout
+
+==== Fields on the Interface
+
+[cols="1,1"]
+|===
+| Name | Type
+
+| Dream Title
+| Label
+
+| Dream Date
+| Label
+
+| Description
+| Text field
+
+| Tags
+| Tag selector field
+
+|===
+
+==== Available Actions on the Interface
+
+[cols="1,1,1"]
+|===
+| Event | Description | Permission
+
+| Edit
+| Opens the dream editing interface.
+| DREAM_UPDATE
+
+| Delete
+| Displays confirmation for deleting the dream.
+| DREAM_DELETE
+
+|===

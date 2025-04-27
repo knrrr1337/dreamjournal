@@ -1,0 +1,17 @@
+.container {
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 81, 255);
+    cursor: pointer;
+}
+
+
+
+.text {
+    margin: 0px;
+}

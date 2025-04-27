@@ -1,0 +1,13 @@
+.pfpdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 50%;
+}
+
+.pfpdiv img {
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+}

@@ -1,0 +1,14 @@
+.innerModal {
+    width: 500px;
+    max-height: 400px;
+    background-color: rgba(15, 8, 44, 1);
+    padding: 20px;
+    border: 0px;
+    outline: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    gap: 20px;
+}

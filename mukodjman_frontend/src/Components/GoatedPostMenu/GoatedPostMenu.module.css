@@ -1,0 +1,45 @@
+.container {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    background-color: rgba(15, 8, 44, 0.25);
+    backdrop-filter: blur(10px);
+    z-index: 100000;
+    border-radius: 10%;
+    border: 2px solid rgb(49, 44, 85);
+}
+
+.container2 {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    background-color: rgba(15, 8, 44, 0.25);
+    backdrop-filter: blur(10px);
+    z-index: 100000;
+    border-radius: 10%;
+    border: 2px solid rgb(49, 44, 85);
+}
+
+.ul {
+    list-style-type: none;
+    padding: 5px;
+    width: fit-content;
+    margin: auto;
+}
+
+li {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.icon {
+    margin-right: 5px;
+}
+
+.text {
+    text-align: left;
+    margin: 0px;
+    width: 100%;
+}
