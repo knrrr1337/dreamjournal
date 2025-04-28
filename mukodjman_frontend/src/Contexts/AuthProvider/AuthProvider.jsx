@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Snackbar } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext();
 
@@ -10,9 +11,11 @@ export function AuthProvider({ children }) {
     const [canProceed, setCanProceed] = useState(false);
     const [rememberMe, setRememberMe] = useState(false)
 
+    // const navigate = useNavigate()
+
     useEffect(() => {
-        // Check if user data is stored in localStorage
         const storedUser = localStorage.getItem("user");
+        // checkIfUserExists()
         if (storedUser) {
             setUser(JSON.parse(storedUser));
         }
@@ -49,6 +52,12 @@ export function AuthProvider({ children }) {
         sessionStorage.removeItem("user");
     };
 
+    const checkIfUserExists = () => {
+        if (!user) {
+            logout()
+        }
+    }
+
     return (
         <AuthContext.Provider value={{ user, setUser, login, logout, canProceed, rememberMe, setRememberMe }}>
             {children}
@@ -56,3 +65,4 @@ export function AuthProvider({ children }) {
         </AuthContext.Provider>
     );
 }
+

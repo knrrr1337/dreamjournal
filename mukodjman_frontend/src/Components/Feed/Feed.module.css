@@ -20,7 +20,8 @@
 }
 
 .dreams {
-    height: 100%;
+    height: fit-content;
+    margin-bottom: 52px;
 }
 
 .sideBar {

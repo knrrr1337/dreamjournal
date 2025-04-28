@@ -165,7 +165,7 @@ public class DreamService {
         }
         dream.setTags(taga);
 //        dream.setCreated_at(LocalDateTime.now());
-        dream.setCreated_at(LocalDateTime.of(2025, 3, 2, 15, 32, 12));
+        dream.setCreated_at(LocalDateTime.now());
         Dream savedDream = dreamRepository.save(dream);
 
         // Save images

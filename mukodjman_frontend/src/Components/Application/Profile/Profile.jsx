@@ -110,7 +110,7 @@ function Profile () {
                             </div>
                         ) : (
                         <>
-                        {userdreams.length === 0 ? <div>{profileUser.username} not posted anything</div> : ""}
+                        {userdreams.length === 0 ? <div style={{marginTop:"10px"}}>{profileUser.username} has not posted anything yet</div> : ""}
                         {userdreams.map((dream) => {
                             // {console.log(dream)}
                             return <Post

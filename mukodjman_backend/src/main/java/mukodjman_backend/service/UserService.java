@@ -176,4 +176,11 @@ public class UserService {
         return repository.findAll();
     }
 
+    public boolean checkIfUserExists(long id)
+    {
+
+        return usersRepository.existsById(id);
+    }
+
+
 }
